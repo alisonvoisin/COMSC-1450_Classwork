@@ -15,7 +15,7 @@ print(type(z))'''
 '''
 print("A\nB\nC\nD\nE")'''
 
-'''
+
 x = "C:\\Users\\rick\\Documents"
 print(x)
 y = ''' --- SYSTEM MENU ---
@@ -23,7 +23,7 @@ y = ''' --- SYSTEM MENU ---
 2. Save File'''
 print(y)
 z = 'The professor said, \'Make sure you escape matching quotes!\''
-print(z) '''
+print(z) 
 
 
 '''
