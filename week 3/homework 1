@@ -1,0 +1,13 @@
+name = input("What is your name?")
+number_of_items = float(input("Enter the number of items"))
+price_per_item = float(input("Enter the price per item in USD:"))
+
+USD_subtotal = number_of_items * price_per_item
+exchange_rate= 0.92
+cost_in_euro = round(USD_subtotal * exchange_rate, 2)
+
+print("Customer Profile: " + name)
+print(f"USD Total: ${USD_subtotal}")
+print(f"EUR Total: €{cost_in_euro}")
+
+print("System Complete")

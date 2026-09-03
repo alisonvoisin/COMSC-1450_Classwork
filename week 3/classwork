@@ -1,0 +1,19 @@
+'''
+seconds= 7800
+hours = seconds // 3600
+print(hours)
+sec= seconds % 3600
+print(sec)
+min= sec // 60
+print(min)
+sc= min= sec % 60
+print(sc)
+print(hours, min, sc)'''
+
+if(x>=0):
+    if(x==10):
+        print("in range")
+    else:
+        print("too large")
+else:
+    print("too small")

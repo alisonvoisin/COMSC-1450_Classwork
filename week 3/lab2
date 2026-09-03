@@ -1,0 +1,116 @@
+'''
+x= float(input("enter a number: "))
+if(x>0):
+    print("The number is positive")
+else:
+    print("The number is negative")
+
+    
+x= float(input("enter a number: "))
+if(x%2==0):
+    print("The number is even")
+else:
+    print("The number is odd") 
+
+    
+x=float(input("enter your age:"))
+if(x<=19):
+    print("teenager")
+else:
+    print("adult")
+
+    
+x= float(input("enter a temperature: "))
+if(x>=80):
+    print("hot")
+else:
+    print("not hot")
+
+    
+x=float(input("enter a number: "))
+y=float(input("enter another number: "))
+if(x>y):
+    print("The larger number is: ", x)
+else:
+    print("The larger number is: ", y)
+
+    
+x=int(input("enter a number: "))
+if(x>0 and x<100):
+    print("valid score")
+else:
+    print("invalid score")
+
+    
+x=int(input("enter a number: "))
+y=int(input("enter another number: "))
+if(x==y):
+    print("equal")
+else:
+    print("not equal")
+
+
+x= int(input("enter pin:"))
+if(x==1234):
+    print("access granted")
+else:
+    print("access denied")
+
+
+x=int(input("enter a temperature: "))
+if(x>=100):
+     print("very hot")
+elif(x>=80 and x<100):
+    print("hot")
+elif(x>=60 and x<79):
+    print("warm")
+else:
+    print("cold")
+
+     
+x=int(input("enter grade: "))
+if(x>=90):
+    print("A")
+elif(x>=80 and x<89):
+    print("B")
+elif(x>=70 and x<79):
+    print("C")
+elif(x>=60 and x<69):  
+    print("D")
+else:
+    print("F")
+
+
+x=int(input("enter a number: "))
+y=int(input("enter another number: "))
+z=int(input("enter a third number: "))
+if(x>y and x>z):
+    print("The largest number is: ", x)
+elif(y>z and y>x):
+    print("The largest number is: ", y)
+else:
+    print("The largest number is: ", z)
+
+
+x= int(input("enter age: "))
+if(x<13):
+    print("Child under 13-$5")
+elif(x>=13 and x<=17):
+    print("Teenager-$8")
+elif(x>=18):
+    print("Adult-$12")
+elif(x>=65):
+    print("Senior-$7")
+
+
+x=int(input("enter a number: "))
+y=int(input("enter another number: "))
+calc= input("enter an operator: ")
+if(calc=="+"):
+    print(x+y)
+elif(calc=="-"):
+    print(x-y)
+elif(calc=="*"):
+    print(x*y)
+elif(calc=="/"):
+    print(x/y)'''
