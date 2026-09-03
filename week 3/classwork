@@ -6,7 +6,7 @@ sec= seconds % 3600
 print(sec)
 min= sec // 60
 print(min)
-sc= min= sec % 60
+sc= sec % 60
 print(sc)
 print(hours, min, sc)'''
 
