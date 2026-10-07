@@ -1,3 +1,4 @@
-file = open("ixid", "r")
+file = open("data", "r")
 content= file.read()
 print(content)
+file.close()
