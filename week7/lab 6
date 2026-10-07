@@ -1,20 +1,60 @@
+#a
 '''
 file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "r")
 content= file.read()
 print(content)
 file.close()
 
+#b
 file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "r")
-
 for i in file:
     print(i)
 file.close()
 
+#c
 file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "r")
 for i in file:
     print(i.strip().upper())
-file.close()'''
+file.close()
 
+#d
 file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "r")
+count = 0
+for i in file:
+    count = count + int(i)
+print(count)
+file.close()
+
+#e
+file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "w")
+file.write("hello\n")
+file.write("hero\n")
+file.write("hi\n")
+file.close()
+
+#f
+name = input("Enter your name: ")
+file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "w")
+file.write(name)
+file.close()
+
+#g
+file = open("t22.txt", "r")
 for i in file:
     print(i)
+file.close()
+
+#h
+file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "a")
+file.write("\nhi\n")
+file.close()'''
+
+#4
+file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "r")
+count = 0
+for i in file:
+    count = count + int(i)
+    average = count / 5
+print(count)
+print(average)
+file.close()
