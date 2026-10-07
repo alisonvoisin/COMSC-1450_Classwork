@@ -1,0 +1,100 @@
+'''
+count=1
+while (count < 10):
+    print(count)
+    count += 1
+
+count = int(input("Enter a number: "))
+while (count >=0):
+    print(count)
+    count -= 1
+
+count =2
+while (count<=30):
+    print(count,count*count)
+    count +=2
+
+
+x= "yes"
+while(x != "1234"):
+    x=input("enter password to stop: ")
+
+
+x=int(input("guess a number between 1 and 100: "))
+while(x != 4):
+    if(x<4):
+        print("too low")
+    else:
+        print("too high")
+    x=int(input("guess a number between 1 and 100: "))
+
+x=input("enter a word: ")
+while (x != "stop"):
+    x=input("enter a word: ")
+print("Program ended")
+
+sum =0
+x= int(input("Enter a number or 0 to stop: "))
+while(x != 0):
+    sum= sum + x
+    x= int(input("Enter a number or 0 to stop: "))
+print("The total is: ", sum)
+
+
+x=int(input("enter positive integer:"))
+n=0
+count=0
+while(count<=x):
+    n+=count
+    count+=1
+print("the sum of all numbers from 1 to", x, "is:", n)
+
+
+x= int(input("enter a number: "))
+sum = 0
+while(x !=0):
+    sum += x
+    x= int(input("enter a number: "))
+print(sum)
+
+num=int(input("enter a number:"))
+positive=0
+negative=0
+while(num !=0):
+    if(num>0):
+        positive+=1
+    else:
+        negative+=1
+num=int(input("enter a number:"))'''
+
+
+'''
+sum=0
+for i in range(6):
+    x=int(input("enter a grade:"))
+    sum = sum + x
+av = sum/6
+print(av)'''
+
+fact = 1
+x=int(input("enter number"))
+for i in range(1,x):
+    fact = fact * i
+
+
+'''n=int(input("enter a post num or 0 to stop:"))
+max=0
+while(n !=0):
+    if (n%2 == 0):
+        if(n>max):
+            max=n
+    n=int(input("enter a post num or 0 to stop:"))
+    print(max)
+
+
+
+for i in range(1, 11):
+    print(i)
+'''
+
+

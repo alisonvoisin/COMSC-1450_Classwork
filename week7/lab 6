@@ -1,0 +1,3 @@
+file = open("ixid", "r")
+content= file.read()
+print(content)

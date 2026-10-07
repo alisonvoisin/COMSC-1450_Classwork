@@ -1,0 +1,17 @@
+'''
+gpa= float(input("enter gpa: "))
+sat= float(input("enter sat score: "))
+if (gpa<0.0 or gpa>4.0):
+    print("invalid gpa")
+elif (sat < 0):
+    print("invalid sat score")
+elif (gpa <2.5):
+    print("rejected")
+elif (gpa>=3.0 and sat>=1100) or (gpa>=3.5 and sat>=1000):
+    print("accepted")
+else:
+    print("rejected")'''
+
+weight= float(input("enter weight: ")
+if (weight <=0):
+    print("invalid weight")
