@@ -1,0 +1,116 @@
+import tk as tkinter
+from tkinter import messagebox
+
+root = tk.Tk()
+root.title("Personal Health & Travel Assistant")
+root.geometry("500x400")
+l1 = tk.Label(root, text="Select an application from the top menu to begin")
+l1.pack(pady=20)
+fitness_page = tk.Frame(root)
+flight_page = tk.Frame(root)
+l2 = tk.Label(fitness_page, text="Activity name:")
+l2.pack(pady=20)
+activity_entry = tk.Entry(fitness_page)
+activity_entry.pack(pady=10)
+l3 = tk.Label(fitness_page, text="Duration (minutes):")
+l3.pack(pady=10)
+duration_entry = tk.Entry(fitness_page)
+duration_entry.pack(pady=10)
+l4 = tk.Label(fitness_page, text="Select Intensity:")
+l4.pack(pady=10)
+intensity_var = tk.StringVar(value="low")
+b1 = tk.Radiobutton(fitness_page, text="Low", variable=intensity_var, value="low")
+b1.pack()
+b2 = tk.Radiobutton(fitness_page, text="Medium", variable=intensity_var, value="medium")
+b2.pack()
+b3 = tk.Radiobutton(fitness_page, text="High", variable=intensity_var, value="high")
+b3.pack()
+l5 = tk.Label(fitness_page, fg="green")
+l5.pack(pady=10)
+def log_workout():
+    activity = activity_entry.get()
+    duration = duration_entry.get()
+    intensity = intensity_var.get()
+    if not activity or not duration:
+        messagebox.showerror("Error", "Please fill in all fields")
+        return
+    try:
+        duration = float(duration)
+    except ValueError:
+        messagebox.showerror("Error", "Duration must be a number")
+        return
+    l5.config(text=f"Logged: {activity} for {duration} minutes at {intensity} intensity.")
+try:
+    minutes = int(duration_entry.get())
+    if minutes <= 0:
+        messagebox.showerror("invalid duration", "enter number of minuets")
+        return
+    if intensity_var.get() == "low":
+        multiplier = 5
+    elif intensity_var.get() == "medium":
+        multiplier = 8
+    else:
+        multiplier = 12
+        cal=minutes * multiplier
+l5.config(f"Logged: {activity} for {duration} minutes at {intensity} intensity. Estimated calories burned: {cal}")
+with open("user_logs.txt", "a") as f:
+    f.write(f"[FITNESS] Activity: {activity}, Duration: {duration} minutes, Intensity: {intensity}, Calories burned: {cal}\n")
+    l1.config(text="Workout logged successfully!")
+except ValueError:
+messagebox.showerror("Error", "Duration must be a number")
+b2 = tk.Button(fitness_page, text="Log Workout", command=log_workout)
+b2.pack(pady=20)
+l6= tk.Label(flight_page, text="base ticket price:")
+l6.pack(pady=20)
+base_price_entry = tk.Entry(flight_page)
+baggage_var = tk.IntVar()
+meal_var = tk.IntVar()
+priority_var = tk.IntVar()
+baggage_check = tk.Checkbutton(flight_page, text="Baggage ($35.00)", variable=baggage_var)
+meal_check = tk.Checkbutton(flight_page, text="Meal ($15.00)", variable=meal_var)
+priority_check = tk.Checkbutton(flight_page, text="Priority Boarding ($20.00)", variable=priority_var)
+l7 = tk.Label(flight_page)
+def cal_fare():
+    base_price = base_price_entry.get()
+    if base_price.strip():
+        messagebox.showerror("Error", "Please enter a base price")
+        return
+try:
+    price = float(base_price)
+    if price <= 0:
+        l7.config(text="Base price must be positive")
+        return
+    total = price
+    if baggage_var.get()==1:
+        total += 35.00
+    if meal_var.get()==1:
+        total += 15.00
+    if priority_var.get()==1:
+        total += 20.00
+    l7.config(text=f"Total fare: ${total:.2f}")
+    with open("user_logs.txt", "a") as f:
+        f.write(f"[FLIGHT] Base price: ${price:.2f}, Baggage: {'Yes' if baggage_var.get() else 'No'}, Meal: {'Yes' if meal_var.get() else 'No'}, Priority Boarding: {'Yes' if priority_var.get() else 'No'}, Total fare: ${total:.2f}\n")
+    l1.config(text="Flight fare calculated successfully!")
+except ValueError:
+    l7.config(text="Base price must be a number")
+b3 = tk.Button(flight_page, text="Calculate Fare", command=cal_fare)
+def show_page(frame_to_show):
+    fitness_page.pack_forget()
+    flight_page.pack_forget()
+    frame_to_show.pack(fill="both", expand=True, padx=20, pady=20)
+def reset_actyivity_logs():
+    l1.config(text="Activity logs have been reset.")
+def exit_app():
+    root.destroy()
+menu_bar = tk.Menu(root)
+file_menu = tk.Menu(menu_bar, tearoff=0)
+file_menu.add_command(label="Reset Activity Logs", command=reset_actyivity_logs)
+file_menu.add_command(label="Exit", command=exit_app)
+menu_bar.add_cascade(label="File", menu=file_menu)
+root.config(menu=menu_bar)
+app_menu= tk.Menu(menu_bar, tearoff=0)
+app_menu.add_command(label="Fitness Tracker", command=lambda: show_page(fitness_page))
+app_menu.add_command(label="Flight Tracker", command=lambda: show_page(flight_page))
+menu_bar.add_cascade(label="Applications", menu=app_menu)   
+root.config(menu=menu_bar)
+root.mainloop()

@@ -1,0 +1,22 @@
+def process_atm_transactions(balance):
+    successful_transactions = 0
+    while True:
+        amount = float(input("Enter transaction amount: "))
+        if amount == 0:
+            break
+        elif amount > 0:
+            balance = balance + amount
+            successful_transactions += 1
+        elif amount < 0:
+            if balance >= abs(amount):
+                balance = balance + amount
+                successful_transactions += 1
+            else:
+                print("Insufficient funds.")
+    return balance, successful_transactions
+def main():
+    starting_balance = float(input("Enter starting balance: "))
+    final_balance, transaction_count = process_atm_transactions(starting_balance)
+    print("final balance:", final_balance)
+    print("number of transactions:", transaction_count)
+main()

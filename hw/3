@@ -1,0 +1,25 @@
+def calculate_ticket_sales():
+    total_sales = 0
+    total_tickets = 0
+    while True:
+        age = int(input("Enter age:"))
+        if age == -1:
+            break
+        if age < 5:
+            ticket_price = 0
+        elif age <= 12:
+            ticket_price = 8
+        elif age <= 59:
+            ticket_price = 12
+        else:
+            ticket_price = 9
+        total_sales = ticket_price+ total_sales
+        total_tickets+=1
+    if total_tickets >= 10:
+        total_sales = total_sales * 0.95
+    return total_sales, total_tickets
+def main():
+    final_sales, tickets_sold = calculate_ticket_sales()
+    print("Total tickets sold:", tickets_sold)
+    print("Final sales amount: $", round(final_sales, 2))
+main()

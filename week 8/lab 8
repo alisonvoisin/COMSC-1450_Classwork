@@ -1,0 +1,22 @@
+'''def get_stock(inventory, item):
+     return inventory.get(item, "Not in stock")
+print(get_stock({"apple": 10, "banana": 5}, "apple"))
+
+keys={"name", "age", "role"}
+values={"Alex", 24, "Developer"}
+d = dict(zip(keys, values))
+print(d)
+
+d={"sara":56,"dave":27,"john":98}
+for k,v in d.items():
+    if v>=50:
+        print(k,v)
+
+d= {"a":1,"b":2,"c":3}
+d2={}
+for k, v in d.items():
+    d2[v]=k
+    print(d2)'''
+
+default_settings= {"theme": "light", "font_size": 12, "show_tips": True}
+user_settings= {"theme": "dark", "font_size": 14}

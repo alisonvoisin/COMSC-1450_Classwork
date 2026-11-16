@@ -1,0 +1,12 @@
+import random
+def play_bounded_guessing_game():
+    number= random.randint(1, 10)
+    for attempt in range(3):
+        guess = int(input("Guess the secret integer between 1 and 10: "))
+        if guess ==number:
+            print("Congratulations! You won!")
+        return
+    else: attempt < 2
+    print("Wrong guess! Try again.")
+    print(f"Game over! The secret integer was {number}.")
+play_bounded_guessing_game()

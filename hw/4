@@ -1,0 +1,22 @@
+def calculate_payroll():
+    total_payroll = 0
+    while True:
+        wage = float(input("Enter wage: "))
+        if wage < 0:
+            break
+        hours = float(input("Enter hours worked: "))
+        if hours > 40:
+            overtime_hours = hours - 40
+            regular_pay = 40 * wage
+            overtime_pay = overtime_hours * wage * 1.5
+            employee_pay = regular_pay + overtime_pay
+        else:
+            employee_pay = hours * wage
+        total_payroll = total_payroll + employee_pay
+    if total_payroll > 5000:
+        print("Payroll exceeded the budget!")
+    return total_payroll
+def main():
+    total = calculate_payroll()
+    print(f"Total payroll: ${total:.2f}")
+main()

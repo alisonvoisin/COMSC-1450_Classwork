@@ -47,14 +47,25 @@ file.close()
 #h
 file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "a")
 file.write("\nhi\n")
-file.close()'''
+file.close()
 
 #4
 file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "r")
 count = 0
+c=0
 for i in file:
     count = count + int(i)
-    average = count / 5
+    c = c + 1
+average = count / c
 print(count)
 print(average)
+file.close()'''
+
+#5
+file = open("//Users//alisonvoisin//Desktop//Classwork//COMSC-1450_Classwork//week7//data.txt", "r")
+count = 0
+for i in file:
+    if int(i) %2 ==0:
+        count = count + int(i)
+print(count)
 file.close()

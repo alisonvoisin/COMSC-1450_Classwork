@@ -1,0 +1,56 @@
+#1
+'''
+while True:
+    try:
+        x=int(input("Enter the numerator (A): "))
+        y=int(input("Enter the denominator (B): "))
+        z=x/y
+        print(z)
+    except ValueError as e:
+        print("Please enter a valid number")
+    except ZeroDivisionError as e:
+        print("Cant divide by 0")
+    else:
+        print(y)
+        break
+
+#2
+list=["Laptop", "Headphones", "Backpack", "Water Bottle"]
+try:
+    index=int(input("enter the index of the item you want to view: "))
+    print(list[index])
+except ValueError as e:
+    print("Please enter a valid number")
+except IndexError as e:
+    print("Index out of bounds")
+except Exception as e:
+    print("An error occurred")'''
+
+#3
+try:
+    f=open("grades.txt", "r")
+    total=0
+    for i in f:
+        total+=int(i)
+except FileNotFoundError as e:
+    print("File not found")
+except ValueError as e:
+    print("Invalid value in file")
+else:
+    print(total)
+
+
+
+#4
+amount=500
+try:
+    x= int(input("enter withdrawl amount: "))
+    if x<=0:
+        raise ValueError("Withdrawl amount must be positive")
+    if x>amount:
+        raise ValueError("Insufficient funds")
+except ValueError as e: 
+    print(e)
+else:
+    amount=amount-x
+    print("Withdrawl successful. Remaining balance:", amount)
